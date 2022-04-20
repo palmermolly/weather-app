@@ -1,0 +1,45 @@
+.weather-breakdown {
+  font-size: 12px;
+  text-align: right;
+  margin: 10px 10px;
+}
+li {
+  list-style-type: none;
+}
+
+h1 {
+  color: #1bb2a8;
+}
+
+h2 {
+  color: #596aca;
+}
+.units {
+  position: relative;
+  top: -15px;
+  font-size: 12px;
+}
+
+a {
+  text-decoration: none;
+  color: #596aca;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 20px;
+}
+
+.current-conditions {
+  text-align: center;
+}
+
+.card-group {
+  text-align: center;
+  color: #596aca;
+}
