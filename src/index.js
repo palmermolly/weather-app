@@ -1,5 +1,3 @@
-import "./styles.css";
-
 function displayWeatherConditions(response) {
   console.log(response);
   document.querySelector("#city").innerHTML = response.data.name;
