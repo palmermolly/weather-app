@@ -1,11 +1,13 @@
-function displayWeatherConditions(response) {
+function displayCurrentTemp(response) {
   console.log(response);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
-  document.querySelector("#humidity").innerHTMl = response.data.main.humidity;
-  document.querySelector("#wind").innerHTMl = Math.round(
+  document.querySelector("#search-input-conditions").innerHTML =
+    response.data.weather[0].description;
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
 }
@@ -17,7 +19,7 @@ function search(event) {
   let apiKey = "9a1308ed0f5a60a1ad33ac8ed1ebca18";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   console.log(apiUrl);
-  axios.get(apiUrl).then(displayWeatherConditions);
+  axios.get(apiUrl).then(displayCurrentTemp);
 }
 
 let searchInput = document.querySelector("#search-form");
@@ -43,8 +45,8 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 
-let p = document.querySelector("p");
-p.innerHTML = `${day} ${hours}:${minutes}`;
+let p = document.querySelector("#date-and-time");
+p.innerHTML = `${day} ${hours}:${minutes},`;
 
 function convertToF(event) {
   event.preventDefault();
