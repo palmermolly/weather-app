@@ -21,58 +21,69 @@
 
   <body>
     <div class="container">
-      <form id="search-form">
-        <input type="text" id="search-input" placeholder="Search city..." />
-        <input type="submit" />
-      </form>
-      <span id="date-and-time"></span>
-      <span id="search-input-conditions"></span>
-      <ul class="weather-breakdown">
-        <li>Humidity: <span id="humidity"></span>%</li>
-        <li>Wind: <span id="wind"></span>mph</li>
-      </ul>
-      <div class="current-conditions">
-        <h1 id="city"></h1>
-        <h2 class="temperature" id="temperature"></h2>
-        <span class="units">
-          <a href="#" id="celsius-link">°C</a> /
-          <a href="#" id="fahrenheit-link">°F</a>
-        </span>
-        <h3 id="current-weather-icon">🌖</h3>
+      <div class="weather-app">
+        <form id="search-form">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search city..."
+            autofocus="on"
+          />
+          <input type="submit" />
+        </form>
+        <div class="date-time-conditions">
+          <span id="date-and-time"></span>
+          <span id="search-input-conditions"></span>
+        </div>
+        <ul class="weather-breakdown">
+          <li>
+            Humidity: <span class="humidity"><span id="humidity"></span>%</span>
+          </li>
+          <li>
+            Wind: <span class="wind"><span id="wind"></span>mph</span>
+          </li>
+        </ul>
+        <div class="current-conditions">
+          <h1 id="city"></h1>
+          <h2 class="temperature" id="temperature"></h2>
+          <span class="units">
+            <a href="#" id="celsius-link">°C</a> /
+            <a href="#" id="fahrenheit-link">°F</a>
+          </span>
+          <h3 id="current-weather-icon">🌖</h3>
+        </div>
+        <p></p>
+        <div class="row row-cols-5">
+          <div class="col" id="day-zero">Thu</div>
+          <div class="col" id="day-one">Fri</div>
+          <div class="col" id="day-two">Sat</div>
+          <div class="col" id="day-three">Sun</div>
+          <div class="col" id="day-four">Mon</div>
+          <div class="col" id="day-zero-icon">icon</div>
+          <div class="col" id="day-one-icon">icon</div>
+          <div class="col" id="day-two-icon">icon</div>
+          <div class="col" id="day-three-icon">icon</div>
+          <div class="col" id="day-four-icon">icon</div>
+          <div class="col" id="day-zero-max">max</div>
+          <div class="col" id="day-one-max">max</div>
+          <div class="col" id="day-two-max">max</div>
+          <div class="col" id="day-three-max">max</div>
+          <div class="col" id="day-four-max">max</div>
+          <div class="col" id="day-zero-min">min</div>
+          <div class="col" id="day-one-min">min</div>
+          <div class="col" id="day-two-min">min</div>
+          <div class="col" id="day-three-min">min</div>
+          <div class="col" id="day-four-min">min</div>
+        </div>
+        <script src="src/index.js"></script>
       </div>
-      <p></p>
-      <div class="row row-cols-5">
-        <div class="col" id="day-zero">Thu</div>
-        <div class="col" id="day-one">Fri</div>
-        <div class="col" id="day-two">Sat</div>
-        <div class="col" id="day-three">Sun</div>
-        <div class="col" id="day-four">Mon</div>
-        <div class="col" id="day-zero-icon">icon</div>
-        <div class="col" id="day-one-icon">icon</div>
-        <div class="col" id="day-two-icon">icon</div>
-        <div class="col" id="day-three-icon">icon</div>
-        <div class="col" id="day-four-icon">icon</div>
-        <div class="col" id="day-zero-max">max</div>
-        <div class="col" id="day-one-max">max</div>
-        <div class="col" id="day-two-max">max</div>
-        <div class="col" id="day-three-max">max</div>
-        <div class="col" id="day-four-max">max</div>
-        <div class="col" id="day-zero-min">min</div>
-        <div class="col" id="day-one-min">min</div>
-        <div class="col" id="day-two-min">min</div>
-        <div class="col" id="day-three-min">min</div>
-        <div class="col" id="day-four-min">min</div>
-      </div>
-      <br />
-      <footer>
+      <small>
         <a
           href="https://github.com/palmermolly/weather-app/commits?author=palmermolly"
         >
-          open-source code by Molly Palmer</a
-        >
-      </footer>
-
-      <script src="src/index.js"></script>
+          open-source code</a
+        >, by Molly Palmer
+      </small>
     </div>
   </body>
 </html>
