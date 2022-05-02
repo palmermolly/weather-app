@@ -9,7 +9,7 @@ function displayCurrentTemp(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = `${Math.round(
     response.data.main.temp
-  )}°`;
+  )}°C`;
   document.querySelector("#search-input-conditions").innerHTML =
     response.data.weather[0].description;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
@@ -73,9 +73,7 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
-function search(event) {
-  event.preventDefault();
-  let city = document.querySelector("#search-input").value;
+function search(city) {
   let units = "metric";
   let apiKey = "9a1308ed0f5a60a1ad33ac8ed1ebca18";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
@@ -83,8 +81,16 @@ function search(event) {
   axios.get(apiUrl).then(displayCurrentTemp);
 }
 
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#search-input");
+  search(cityInputElement.value);
+}
+
 let searchInput = document.querySelector("#search-form");
-searchInput.addEventListener("submit", search);
+searchInput.addEventListener("submit", handleSubmit);
+
+search("London");
 
 let currentTime = new Date();
 let days = [
