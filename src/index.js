@@ -9,7 +9,7 @@ function displayCurrentTemp(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = `${Math.round(
     response.data.main.temp
-  )}°C`;
+  )}°C `;
   document.querySelector("#search-input-conditions").innerHTML =
     response.data.weather[0].description;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
@@ -51,7 +51,7 @@ function displayForecast(response) {
                 forecastDay.dt
               )}</div>
               <img
-                src="http://openweathermap.org/img/wn/${
+                src="https://openweathermap.org/img/wn/${
                   forecastDay.weather[0].icon
                 }@2x.png"
                 alt=""
