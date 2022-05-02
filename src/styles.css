@@ -69,10 +69,29 @@ body {
   color: #bde4f4;
 }
 
-.predicted-weather {
+.weather-forecast {
   text-align: center;
   color: #404969;
   background-color: #e0fcff;
   border-radius: 5px;
   padding: 10px;
+}
+
+.weather-forecast-date {
+  color: #404969;
+  font-size: 16px;
+  opacity: 0.6;
+}
+
+.weather-forecast-temperatures {
+  font-size: 13px;
+}
+
+.weather-forecast-temperature-max {
+  color: #404969;
+}
+
+.weather-forecast-temperature-min {
+  color: #ff7f50;
+  opacity: 0.6;
 }
