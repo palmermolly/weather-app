@@ -7,9 +7,9 @@ function getForecast(coordinates) {
 
 function displayCurrentTemp(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(
+  document.querySelector("#temperature").innerHTML = `${Math.round(
     response.data.main.temp
-  );
+  )}°`;
   document.querySelector("#search-input-conditions").innerHTML =
     response.data.weather[0].description;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
@@ -107,24 +107,4 @@ if (minutes < 10) {
 }
 
 let p = document.querySelector("#date-and-time");
-p.innerHTML = `${day} ${hours}:${minutes},`;
-
-function convertToF(event) {
-  event.preventDefault();
-  let fConversion = document.querySelector("#temperature");
-  let temperature = fConversion.innerHTML;
-  fConversion.innerHTML = Math.round((temperature * 9) / 5 + 32);
-}
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", convertToF);
-
-function convertToC(event) {
-  event.preventDefault();
-  let cConversion = document.querySelector("#temperature");
-  let temperature = cConversion.innerHTML;
-  cConversion.innerHTML = Math.round(((temperature - 32) * 5) / 9);
-}
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", convertToC);
+p.innerHTML = `${day} ${hours}:${minutes}`;
